@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Lista de Personas</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <div class="container">
+        <h4>Lista de Personas</h4>
+        <hr>
+
+        <a class="back-link" th:href="@{/}">Regresar</a>
+        <a class="add-link" th:href="@{/agregar_persona}">Añadir Persona</a>
+
+        <div th:if="${personas != null and !personas.empty}">
+            <table>
+                <thead>
+                    <tr>
+                        <th>DNI</th>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                        <th>Fecha de Nacimiento</th>
+                        <th>Lugar de Nacimiento</th>
+                        <th>Edad</th>
+                        <th>Estatura</th>
+                        <th>Sexo</th>
+                        <th>Nivel de Estudios</th>
+                        <th>Situación Militar</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="persona : ${personas}">
+                        <td th:text="${persona.DNI}"></td>
+                        <td th:text="${persona.nombre}"></td>
+                        <td th:text="${persona.apellidos}"></td>
+                        <td th:text="${persona.fechaNacimiento}"></td>
+                        <td th:text="${persona.lugarNacimiento}"></td>
+                        <td th:text="${persona.edad}"></td>
+                        <td th:text="${persona.estatura}"></td>
+                        <td th:text="${persona.sexo}"></td>
+                        <td th:text="${persona.nivelEstudio}"></td>
+                        <td th:text="${persona.situacionMilitar}"></td>
+                        <td>
+                            <a class="edit-link" th:href="@{/editar_persona/}+${persona.DNI}">Editar</a>
+                            <a class="delete-link" th:href="@{/eliminar_persona/}+${persona.DNI}">Eliminar</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div th:if="${personas == null or personas.empty}">
+            <p>La lista de personas está vacía</p>
+        </div>
+    </div>
+</body>
+</html>

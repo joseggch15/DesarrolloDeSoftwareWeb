@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Lista de Lugares</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <div class="container">
+        <h4>Lista de Lugares</h4>
+        <hr>
+
+        <a class="back-link" th:href="@{/}">Regresar</a>
+
+        <div th:if="${lugares != null and !lugares.empty}">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id Lugar</th>
+                        <th>Nombre</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="lugar : ${lugares}">
+                        <td th:text="${lugar.id}"></td>
+                        <td th:text="${lugar.nombre}"></td>
+                        <td>
+                            <a class="edit-link" th:href="@{/editar_lugar/}+${lugar.id}">Editar</a>
+                            <a class="delete-link" th:href="@{/eliminar_lugar/}+${lugar.id}">Eliminar</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div th:if="${lugares == null or lugares.empty}">
+            <p>La lista de lugares está vacía</p>
+        </div>
+    </div>
+</body>
+</html>

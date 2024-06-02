@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Applicación Censo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link th:href="@{/css/style_index.css}" rel="stylesheet"/>
+    </head>
+    <body>
+        
+    <section class="header">
+            <ul class="nav">
+                    <li><a href="">PERSONAS</a>
+                        <ul class="organizacion">
+                            <li><a th:href="@{/agregar_persona}">Añadir Persona</a></li>
+                            <li><a th:href="@{/listar_persona}">Gestionar Persona</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li><a href="">LUGARES</a>
+                        <ul class="cuenta">
+                            <li><a th:href="@{/agregar_lugar}">Añadir Lugar</a></li>
+                            <li><a th:href="@{/listar_lugar}">Gestionar Lugar</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="">MUNICIPIOS</a>
+                        <ul class="empleado">
+                            <li><a th:href="@{/agregar_lugar}">Añadir Municipio</a></li>
+                            <li><a th:href="@{/listar_lugar}">Gestionar Municipio</a></li>
+                        </ul>
+                
+                    </li>
+                    <li><a href="">REGISTROS</a>
+                    <ul class="sucursal">
+                            <li><a th:href="@{/agregar_registro}">Añadir Registro</a></li>
+                            <li><a th:href="@{/listar_registro}">Gestionar Registro</a></li>
+                        </ul>
+                    </li> 
+
+                    </li>
+                    <li><a href="">RESIDENCIAS</a>
+                    <ul class="sucursal">
+                            <li><a th:href="@{/agregar_residencia}">Añadir Registro</a></li>
+                            <li><a th:href="@{/listar_residencia}">Gestionar Registro</a></li>
+                        </ul>
+                    </li> 
+    </section>
+    </body>
+</html>

@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+}
+
+.header {
+    background-color: rgba(51, 51, 51, 0.9);
+    color: #fff;
+    padding: 15px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.nav > li {
+    position: relative;
+}
+
+.nav > li > a {
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+}
+
+.nav > li > a:hover {
+    background-color: #575757;
+}
+
+.organizacion, .cuenta, .empleado, .sucursal {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    background-color: rgba(51, 51, 51, 0.9);
+    display: none;
+    min-width: 180px;
+    z-index: 1000;
+}
+
+.organizacion li, .cuenta li, .empleado li, .sucursal li {
+    border-bottom: 1px solid #444;
+}
+
+.organizacion li a, .cuenta li a, .empleado li a, .sucursal li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
+
+.organizacion li a:hover, .cuenta li a:hover, .empleado li a:hover, .sucursal li a:hover {
+    background-color: #575757;
+}
+
+.nav > li:hover .organizacion,
+.nav > li:hover .cuenta,
+.nav > li:hover .empleado,
+.nav > li:hover .sucursal {
+    display: block;
+}
